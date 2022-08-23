@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Generar icono del landingpage -->
+    <link rel="shortcut icon" href="./img/cross1.gif">
+    <title>El Gato Pillo</title>
+</head>
+<body>
+        
+    <!-- Contenedor -->
+    <section id="content">
+        <article id="game">
+            <article id="title">
+                <h1>"El Gato Pillo!"</h1>
+            </article>
+            <!-- tablero -->
+            <article id="content_board">
+                <div id="board">
+
+                        <!-- Columna y fila | C=0 F=2 -->
+                        <div class="rows">
+
+                            <div class="row">
+                                <div id="c02" class="cell" onclick="checkCell(0,2)"></div>
+                                <div id="c12" class="cell" onclick="checkCell(1,2)"></div>
+                                <div id="c22" class="cell" onclick="checkCell(2,2)">
+                                    <!-- <img src="./img/circle1.gif" alt=""> -->
+                                </div>                                
+                            </div>
+    
+                            <div class="row">
+                                <div id="c01" class="cell" onclick="checkCell(0,1)"></div>
+                                <div id="c11" class="cell" onclick="checkCell(1,1)"></div>
+                                <div id="c21" class="cell" onclick="checkCell(2,1)"></div>
+                            </div>
+    
+                            <div class="row">
+                                <div id="c00" class="cell" onclick="checkCell(0,0)"></div>
+                                <div id="c10" class="cell" onclick="checkCell(1,0)"></div>
+                                <div id="c20" class="cell" onclick="checkCell(2,0)"></div>
+                            </div>
+
+                        </div>
+                        
+                        <div id="message">
+                            <p id="notification"></p>
+                            <div id="share_panel">
+                                <p id="button" onclick="autoplay()"></p>
+                                <div id="tweet_game">
+                                    <div id="tweet_gameover"></div>
+                                    <!-- <a target="_blank" href="http://twitter.com/share?text=perdi"class="fa fa-twitter"></a> -->
+                                    <!-- <a href="#" class="fa fa-facebook"></a> -->
+                                    <!-- <a href="#" class="fa fa-instagram"></a> -->
+                                    <!-- <a href="http://twitter.com/share?text=perdi" target="_blank" class="tweetbutton" title="Compartir">Compartir</a> -->
+                                    <!-- <a target="_blank" href="http://twitter.com/share?text=perdi">Compartir</a> -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+
+                </div>
+            </article>
+
+        </article>
+    </section>
+    
+    <!-- Script -->
+    <script src="./js/modernizr-custom.js"></script>
+    <script src="./js/autoplay.js"></script>
+    <script src="./js/smart.js"></script>
+    <script src="./js/check_manager.js"></script>
+    <script src="./js/message_manager.js"></script>
+</body>
+</html>
