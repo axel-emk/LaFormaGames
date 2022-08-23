@@ -1,0 +1,61 @@
+// Llamar a otro archivo | import
+@use 'tablero';
+@use 'variables';
+
+// Required | para modificar variables 
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// Variables 
+$fuente-game: 'Press Start 2P', cursive;
+$primary: #7C3D57;
+$secundary: #faa974;
+$danger: #ec6a6e;
+$warning: #fff7d4;
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger,
+  "warning": $warning,
+  "secundary": $secundary
+);
+
+
+// ----------------------------------------
+
+
+// Los cambios de propiedades deben antes del import de bootstrap.scss
+body{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  color: $primary;
+}
+
+h1{
+  font-family: $fuente-game;
+  color: $primary;
+}
+strong{
+  font-family: $fuente-game;
+  color: $primary;
+
+}
+p{
+  font-family: $fuente-game;
+  color: $primary;
+  font-size: 12px;
+  
+}
+
+
+    
+    
+    // Importar libreria Bootstrap ------------------------------------------------------
+    @import "../node_modules/bootstrap/scss/bootstrap.scss"
+    
+    
+
+    
+
+    
+    

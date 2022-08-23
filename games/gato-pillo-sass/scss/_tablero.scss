@@ -1,0 +1,62 @@
+$primary: #7C3D57;
+$secundary: #faa974;
+$danger: #ec6a6e;
+$warning: #fff7d4;
+
+/* Contenedor */
+
+#content{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#game{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/* Tablero */
+
+#content_board{
+    text-align: center;
+}
+
+#board{
+    width: auto;
+    position: relative;
+    padding: 3px 0px 0px 3px ;
+}
+
+#board .row{
+    width: 100%;
+    padding: 0px;
+}
+
+#board .row .cell{
+    padding: 0px;
+    border: 2px solid $danger;
+    // margin: 5px;
+    width: 100px;
+    height: 100px;
+    // display: inline-block;
+    position: relative;
+}
+
+/* Crear sombra al pasar el raton */
+#board .row .cell:hover{
+    box-shadow: inset 0px 0px 6px $secundary,
+                inset 0px 0px 2px $secundary, 
+                inset 0px 0px 15px $secundary;
+}
+
+#board .row .cell img{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+}
+

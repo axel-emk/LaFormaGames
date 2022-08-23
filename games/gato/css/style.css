@@ -1,0 +1,146 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: purple;
+    background-color: lavender;
+}
+
+/* Contenedor */
+
+#content{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#game{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#game h1{
+    font-size: 3em;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Tablero */
+
+#content_board{
+    text-align: center;
+}
+
+#board{
+    width: auto;
+    position: relative;
+    padding: 3px 0px 0px 3px ;
+}
+
+#board .row{
+    width: 100%;
+    padding: 0px;
+}
+
+#board .row .cell{
+    padding: 0px;
+    border: 2px solid magenta;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Crear sombra al pasar el raton */
+#board .row .cell:hover{
+    box-shadow: inset 0px 0px 6px purple,
+                inset 0px 0px 2px purple, 
+                inset 0px 0px 15px purple;
+}
+
+#board .row .cell img{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+}
+
+#message{
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 , 68, 100, 0.6);
+}
+
+#notification{
+    font-size: 6em;
+    font-weight: bold;
+    color: lavender;
+    margin-top: 30px;
+    text-shadow: 1px 1px 1px rgb(0 , 68, 100),
+                 -1px -1px 1px rgb(0 , 68, 100);
+}
+
+#share_panel{
+    display: block;
+    text-align: center;
+}
+
+#button{
+    font-size: 1.5em;
+    /* font-weight: bolder; */
+    background-color: purple;
+    border-radius: 20px 20px 0 0;
+    color: aqua;
+    width: 70%;
+    margin-left: 15%;
+    line-height: 80px;
+}
+#button:hover{
+    cursor: pointer;
+    /* background-color: azure; */
+}
+#tweet_game{
+    background-color: purple;
+    border-radius: 0 0 20px 20px;
+    color: aqua;
+    width: 70%;
+    margin-left: 15%;
+    line-height: 80px;
+    margin-top: -40px;
+    padding: 10px 0 20px 0;
+    text-align: center;
+}
+
+/* Font Iconos */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }

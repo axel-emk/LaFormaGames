@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.css">
+    <!-- Font Family | icono -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/gato-ico.png">
+    <title>El Gato Pillo!</title>
+</head>
+
+<body class="bg-warning ">
+  
+  <section class="container">
+
+    <!-- Alerta - intro al game -->
+    <div class="alert alert-secundary alert-dismissible fade show mt-2" role="alert">
+      <img class="m-2" src="./img/gato-ico.png" alt="">
+      <strong class="m-2">Miau!!</strong> 
+      <p>Instrucciones del juego:</p>
+      <p>Juega sin ilision, este gato no se deja vencer.</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- Titulo del juego -->
+    <article class="row mt-5">
+      <div class="col-12">
+        <h1 class="text-center animate__animated animate__bounceIn">"El Gato Pillo!"</h1>
+      </div>       
+    </article>
+    
+    
+    <!-- tablero e imagen -->
+    <article class="row align-items-end mt-4">
+      <div class="col-lg-3 col-md-2 offset-1 d-flex justify-content-center">
+        <img class="animate__animated animate__backInLeft mb-5" src="./img/Gato_Giff_1.gif" alt="">
+      </div>
+      <div class="col-lg-8 col-md-10">
+        <article id="content">
+          <article id="game">
+
+            <!-- tablero -->
+          <section class="animate__animated animate__zoomIn ">
+            <article id="content_board">
+                <div id="board">
+
+                        <!-- Columna y fila | C=0 F=2 -->
+                        <div class="rows">
+
+                            <div class="row">
+                                <div id="c02" class="cell" onclick="checkCell(0,2)"></div>
+                                <div id="c12" class="cell" onclick="checkCell(1,2)"></div>
+                                <div id="c22" class="cell" onclick="checkCell(2,2)">
+                                    <!-- <img src="./img/circle1.gif" alt=""> -->
+                                </div>                                
+                            </div>
+    
+                            <div class="row">
+                                <div id="c01" class="cell" onclick="checkCell(0,1)"></div>
+                                <div id="c11" class="cell" onclick="checkCell(1,1)"></div>
+                                <div id="c21" class="cell" onclick="checkCell(2,1)"></div>
+                            </div>
+    
+                            <div class="row">
+                                <div id="c00" class="cell" onclick="checkCell(0,0)"></div>
+                                <div id="c10" class="cell" onclick="checkCell(1,0)"></div>
+                                <div id="c20" class="cell" onclick="checkCell(2,0)"></div>
+                            </div>
+
+                        </div>
+
+
+                </div>
+            </article>
+          </section>
+        </article>
+
+        </article>
+        
+      </div>
+ 
+    </article>
+          
+
+    
+  </section>
+  
+
+      <!-- Script -->
+      <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
