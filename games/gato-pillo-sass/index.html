@@ -11,7 +11,7 @@
     <!-- Font Family | icono -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./img/gato-ico.png">
-    <title>El Gato Pillo!</title>
+    <title>El Gato Pillo! SASS</title>
 </head>
 
 <body class="bg-warning ">
@@ -79,8 +79,24 @@
             </article>
           </section>
         </article>
+        <div id="message">
+          <p id="notification"></p>
+          <div id="share_panel">
+              <p id="button" onclick="autoplay()"></p>
+              <div id="tweet_game">
+                  <div id="tweet_gameover"></div>
+                  <!-- <a target="_blank" href="http://twitter.com/share?text=perdi"class="fa fa-twitter"></a> -->
+                  <!-- <a href="#" class="fa fa-facebook"></a> -->
+                  <!-- <a href="#" class="fa fa-instagram"></a> -->
+                  <!-- <a href="http://twitter.com/share?text=perdi" target="_blank" class="tweetbutton" title="Compartir">Compartir</a> -->
+                  <!-- <a target="_blank" href="http://twitter.com/share?text=perdi">Compartir</a> -->
+              </div>
+          </div>
+      </div>
 
         </article>
+
+      
         
       </div>
  
@@ -92,6 +108,11 @@
   
 
       <!-- Script -->
+      <!-- <script src="./js/modernizr-custom.js"></script> -->
+      <script src="./js/autoplay.js"></script>
+      <script src="./js/smart.js"></script>
+      <script src="./js/check_manager.js"></script>
+      <script src="./js/message_manager.js"></script>
       <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
