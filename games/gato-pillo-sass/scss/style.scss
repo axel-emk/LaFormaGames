@@ -6,6 +6,7 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
+
 // Variables 
 $fuente-game: 'Press Start 2P', cursive;
 $primary: #7C3D57;
@@ -47,6 +48,18 @@ p{
   
 }
 
+.btn a{
+  font-family: $fuente-game;
+  font-size: 10px;
+  color: $primary;
+  text-decoration: none;
+  padding: 20px;
+  
+  
+}
+.btn a:hover{
+  color: $warning;
+}
 
     
     
