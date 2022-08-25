@@ -150,6 +150,18 @@ p {
   font-size: 12px;
 }
 
+.btn a {
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  color: #7C3D57;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.btn a:hover {
+  color: #fff7d4;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
