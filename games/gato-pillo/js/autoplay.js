@@ -88,7 +88,7 @@ const autoplay = () => {
     // alert('HOLA MUNDO CTM')
     for (i=0; i<3; i++) board[i] = new Array(3);
 
-    turn = "cross";
+    turn = "ball";
     
     // Dar coordenadas | Fuera del tablero para que este vacio
     crossSellected_x = 4;
