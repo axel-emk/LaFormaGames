@@ -28,8 +28,13 @@ class Memorama{
         window.addEventListener('DOMContentLoaded', () => {
             this.seleccionDificultad();
             this.cargarPantalla();
+            // Desabilitar btn der
+            // window.addEventListener('contextmenu', e =>{
+            //     e.preventDefault();
+            // }, false);
         })
     }
+
     // Dificultad del juego
     seleccionDificultad(){
         const mensaje = prompt('Selecciona el nivel de dificultad: Fácil, Intermedio o Difícil. Si no seleccionas ningún nivel por defecto el nivel sera intermedio');
@@ -94,8 +99,11 @@ class Memorama{
     comienzaJuego(){
         const tarjetas = document.querySelectorAll('.tarjeta');
         tarjetas.forEach(tarjeta => {
-            tarjeta.addEventListener('click', e => {   
-                this.clickTarjeta(e)
+            tarjeta.addEventListener('click', e => {  
+                // console.log(e.target.classList); 
+                if (!e.target.classList.contains('acertada') && !e.target.classList.contains('tarjeta-img')){
+                    this.clickTarjeta(e)
+                }                
             })
         })
     }
