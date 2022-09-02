@@ -12,9 +12,12 @@ html {
 
 body {
      font-family: 'Tomorrow', sans-serif;
-     background: #06beb6;  /* fallback for old browsers */
-     background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);  /* Chrome 10-25, Safari 5.1-6 */
-     background: linear-gradient(to right, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     background-color: #ff9133;
+     color: #39868d; 
+     /* background-image: url(../img/pixel-art-pattern.jpg); */
+     /* background: rgb(31,29,66);
+     background: linear-gradient(90deg, rgba(31,29,66,1) 0%, rgba(47,43,100,1) 35%, rgba(73,67,137,1) 100%);*/
+     
 }
 
 img {
@@ -23,6 +26,7 @@ img {
 
 h1 {
      font-size: 3.5rem;
+     text-shadow: #39868d;
 }
 
 div.contenedor-general {
@@ -30,7 +34,7 @@ div.contenedor-general {
      max-width: 100%;
      margin: 0 auto;
      height: 100vh;
-     border: 2px dotted black;
+     border: 2px dotted #39868d;
 }
 
 h1.titulo {
