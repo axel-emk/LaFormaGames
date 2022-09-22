@@ -73,10 +73,10 @@ const randomMove = () => {
         x = Math.round(Math.random()*2);
         y = Math.round(Math.random()*2);
         // condicionales
-        if(board[x][y]== 0 && difMove(x,y) )        
+        if(board[x][y] == 0 && difMove(x,y) )        
         cellAvailable = true;
     }
-    paintCell(x,y);
+    paintCell(x, y);
 }
 
 
