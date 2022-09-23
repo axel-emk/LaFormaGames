@@ -1,3 +1,18 @@
+// Variables 
+$fuente-game: 'Press Start 2P', cursive;
+$primary: #7C3D57;
+$secundary: #faa974;
+$danger: #ec6a6e;
+$warning: #fff7d4;
+$modal:  rgba(124 , 61, 87, 0.6);
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger,
+  "warning": $warning,
+  "secundary": $secundary
+);
+
 #message{
     position: absolute;
     display: block;
@@ -5,16 +20,17 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0 , 68, 100, 0.6);
+    background-color: $modal;
 }
 
 #notification{
-    font-size: 6em;
+    font-size: 100px;
     font-weight: bold;
-    color: lavender;
+    text-align: center;
+    color: $warning;
     margin-top: 30px;
-    text-shadow: 1px 1px 1px rgb(0 , 68, 100),
-                 -1px -1px 1px rgb(0 , 68, 100);
+    text-shadow: 1px 1px 1px $primary,
+                 -1px -1px 1px $primary;
 }
 
 #share_panel{
@@ -25,19 +41,20 @@
 #button{
     font-size: 1.5em;
     /* font-weight: bolder; */
-    background-color: purple;
+    background-color: $primary;
     border-radius: 20px 20px 0 0;
-    color: aqua;
+    color: $warning;
     width: 70%;
     margin-left: 15%;
     line-height: 80px;
 }
 #button:hover{
     cursor: pointer;
+    color: $secundary;
     /* background-color: azure; */
 }
 #tweet_game{
-    background-color: purple;
+    background-color: $primary;
     border-radius: 0 0 20px 20px;
     color: aqua;
     width: 70%;
