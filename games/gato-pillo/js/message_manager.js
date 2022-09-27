@@ -30,9 +30,9 @@ const showMessage = (winner) => {
     messageTweet.innerHTML = string_tweet;
 
     if (winner == 1)
-        string_face = "<a target='_blank' href='http://twitter.com/share?text=Perdí con un Gato!' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
+        string_face = "<a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A//axel-emk.github.io/LaFormaGames/games/gato-pillo/index.html Perdí con un Gato!' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
     else
-        string_face = "<a target='_blank' href='http://twitter.com/share?text=Gane! a un gato' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
+        string_face = "<a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A//axel-emk.github.io/LaFormaGames/games/gato-pillo/index.html  Gane! a un gato' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
     
     messageTweet = document.getElementById("compartir_gameover");
     messageTweet.innerHTML = string_face;
