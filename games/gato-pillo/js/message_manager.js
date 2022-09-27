@@ -15,7 +15,7 @@ const showMessage = (winner) => {
     messageNotification = document.getElementById("notification");
     messageNotification.innerHTML = string_notification;
     
-    if(winner == 1) string_button = "Try Again";
+    if(winner == 1) string_button = "Volver a Jugar";
     else string_button = "Play Again!"
 
     messageButton = document.getElementById("button");
@@ -30,17 +30,17 @@ const showMessage = (winner) => {
     messageTweet.innerHTML = string_tweet;
 
     if (winner == 1)
-        string_face = "<a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A//axel-emk.github.io/LaFormaGames/games/gato-pillo/index.html Perdí con un Gato!' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
+        string_face = "<a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A//axel-emk.github.io/LaFormaGames/games/gato-pillo/index.html' class='fa fa-facebook'></a>";
     else
-        string_face = "<a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A//axel-emk.github.io/LaFormaGames/games/gato-pillo/index.html  Gane! a un gato' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
+        string_face = "<a target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A//axel-emk.github.io/LaFormaGames/games/gato-pillo/index.html' class='fa fa-facebook'></a>";
     
     messageTweet = document.getElementById("compartir_gameover");
     messageTweet.innerHTML = string_face;
 
     if (winner == 1)
-        string_insta = "<a target='_blank' href='http://twitter.com/share?text=Perdí con un Gato!' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-instagram'></a>";
+        string_insta = "<a target='_blank' href='#' class='fa fa-instagram'></a>";
     else
-        string_insta = "<a target='_blank' href='http://twitter.com/share?text=Gane! a un gato' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-instagram'></a>";
+        string_insta = "<a target='_blank' href='#'ass='fa fa-instagram'></a>";
     
     messageTweet = document.getElementById("publicar_gameover");
     messageTweet.innerHTML = string_insta;
