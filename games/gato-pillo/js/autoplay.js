@@ -80,7 +80,7 @@ const selectCell = (x, y) => {
 // Autoplay
 const autoplay = () => {
     // Mensaje game over
-    // hideMessage();
+    hideMessage();
     panel_message = document.getElementById("message");
     panel_message.style.display = "none";
 
