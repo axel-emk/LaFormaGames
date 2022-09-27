@@ -54,6 +54,8 @@ $theme-colors: (
     /* background-color: azure; */
 }
 #tweet_game{
+    display: flex;
+    justify-content: center;
     background-color: $primary;
     border-radius: 0 0 20px 20px;
     color: aqua;

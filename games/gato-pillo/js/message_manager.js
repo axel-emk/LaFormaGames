@@ -22,10 +22,26 @@ const showMessage = (winner) => {
     messageButton.innerHTML = string_button;
 
     if (winner == 1)
-        string_tweet = "<a target='_blank' href='http://twitter.com/share?text=Perdi con un Gato!' class='fa fa-twitter'></a>";
+        string_tweet = "<a target='_blank' href='http://twitter.com/share?text=Perdí con un Gato! #gatopillo https://bit.ly/3DVV6i2'  class='fa fa-twitter'></a>";
     else
-        string_tweet = "<a target='_blank' href='http://twitter.com/share?text=Gane! a un gato' class='fa fa-twitter'></a>";
+        string_tweet = "<a target='_blank' href='http://twitter.com/share?text=Gane! a un gato #gatopillo https://bit.ly/3DVV6i2' class='fa fa-twitter'></a>";
     
     messageTweet = document.getElementById("tweet_gameover");
     messageTweet.innerHTML = string_tweet;
+
+    if (winner == 1)
+        string_face = "<a target='_blank' href='http://twitter.com/share?text=Perdí con un Gato!' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
+    else
+        string_face = "<a target='_blank' href='http://twitter.com/share?text=Gane! a un gato' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-facebook'></a>";
+    
+    messageTweet = document.getElementById("compartir_gameover");
+    messageTweet.innerHTML = string_face;
+
+    if (winner == 1)
+        string_insta = "<a target='_blank' href='http://twitter.com/share?text=Perdí con un Gato!' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-instagram'></a>";
+    else
+        string_insta = "<a target='_blank' href='http://twitter.com/share?text=Gane! a un gato' #gatopillo https://bit.ly/3DVV6i2 class='fa fa-instagram'></a>";
+    
+    messageTweet = document.getElementById("publicar_gameover");
+    messageTweet.innerHTML = string_insta;
 }
