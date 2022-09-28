@@ -36,7 +36,6 @@ $theme-colors: (
   #share_panel{
     display: block;
     text-align: center;
-    justify-content: center;
 }
 
 #button{
@@ -97,11 +96,8 @@ $theme-colors: (
     color: white;
   }
 
-    // .gato{
-
-    // }
-
   .parraf{
     margin: 0px;
     color: $warning;      
   }
+
