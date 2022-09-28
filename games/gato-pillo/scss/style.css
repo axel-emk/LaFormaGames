@@ -64,7 +64,7 @@
 }
 
 #notification {
-  font-size: 100px;
+  font-size: 70px;
   font-weight: bold;
   text-align: center;
   color: #fff7d4;
@@ -75,6 +75,7 @@
 #share_panel {
   display: block;
   text-align: center;
+  justify-content: center;
 }
 
 #button {
