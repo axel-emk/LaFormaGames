@@ -12,7 +12,7 @@ const config = {
         default: "arcade",
         arcade: {
             gravity: {
-                y:500
+                // y:500
             }
         }
     }
@@ -21,30 +21,32 @@ const config = {
   const game = new Phaser.Game(config);
   
   function preload() {
-   this.load.image('pajaro', './assets/bird.png'); // Cargar recursos
-   console.log("Soy Preload");
+    this.load.image("bird", "./assets/bird.png");
   }
   
   function create() {
-    this.pajaro = this.physics.add.image(80, 100, 'pajaro'); // Crear variable de imagen con fisica
-    this.pajaro.setScale(2);
-    this.pajaro.flipX = true;
-    this.pajaro.setOrigin(0.5); // Origen de la imagen
-    // Fisicas
-    this.pajaro.setCollideWorldBounds(true); // encierra el elemento en el contenedor
-    this.pajaro.setBounce(0.3); //agregar rebote
-    this.pajaro.setVelocity(50,0); //Velocidad
-    //this.pajaro.setAcceleration(50,0); //Aceleracion
+    //console.log(Phaser.Input.Keyboard.KeyCodes); // Muestra los códigos de las teclas en consola
+    this.pajaro = this.add.image(100, 50, "bird");
 
-    // this.pajaro = this.add.image(80, 100, 'pajaro'); // Crear variable de imagen
-    // this.add.image(50, 100, 'pajaro'); // Agregar imagen
-    // console.log(this.pajaro);
-  }
+    // Crear las teclas de las flechas
+    // this.cursors = this.input.keyboard.createCursorKeys(); // Genera las teclas predefinidas (left, right, up, down)
+    this.right = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.left = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+
+}
   
-  function update(time, delta) {
-    // this.pajaro.y++; // Agregar moviento en eje y
-    // this.pajaro.x++; // Agregar moviento en eje x
-    // this.pajaro.angle++;
-    // console.log(delta);
+function update() {
+  // if (this.cursors.right.isDown) {
+  //     this.pajaro.x++; // Mueve el pájaro hacia la derecha
+  // }
+
+  // if (this.cursors.left.isDown) {
+  //     this.pajaro.x--; // Mueve el pájaro hacia la izquierda
+  // }
+  if (this.right.isDown) {
+      this.pajaro.x++; // Mueve el pájaro hacia la derecha
+  }else if (this.left.isDown) {
+      this.pajaro.x--; // Mueve el pájaro hacia la izquierda
   }
+}
   
