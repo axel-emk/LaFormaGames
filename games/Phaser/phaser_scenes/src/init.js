@@ -3,7 +3,8 @@ const config = {
     height: 600,
     parent: "container",
     type: Phaser.CANVAS,
-    backgroundColor: '#392542'
+    backgroundColor: '#392542',
+    scene: [SceneA, SceneB]
 }
 
 new Phaser.Game(config);
