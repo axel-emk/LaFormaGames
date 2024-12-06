@@ -7,7 +7,11 @@ const config = {
     parent: "container",
     backgroundColor: '#1B621E',
     physics:{
-        default: "arcade"
+        default: "arcade",
+        arcade: {
+            debug: false, // Desactiva el modo debug (consume recursos)
+            fps: 60,      // Ajusta la tasa de fotogramas
+        }
     },
     scene: [
         Bootloader,

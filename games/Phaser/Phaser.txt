@@ -1,1 +1,49 @@
-Comentarios
+Apuntes:
+
+1. Cambiar a la rama main:
+Primero, asegúrate de que estás en la rama main. En la terminal, ejecuta:
+
+git checkout main
+
+2. Fusionar (merge) los cambios desde develop:
+Ahora, trae los cambios de la rama develop a main:
+
+git merge develop
+
+
+3. Verifica los cambios:
+Asegúrate de que los archivos fusionados estén correctos:
+
+git status
+
+
+4. Sube los cambios al repositorio remoto:
+Empuja los cambios de la rama main al servidor remoto (GitHub):
+
+git push origin main
+
+
+ERROR:
+
+! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/axel-emk/LaFormaGames.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+1. Trae los cambios de la rama remota main:
+Primero, obtén los cambios que existen en el servidor remoto:
+
+git pull origin main
+
+git commit
+
+git push origin main
+
+De ser necesario:
+
+git push origin main --force
+
