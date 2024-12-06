@@ -2,6 +2,7 @@ import Jugadores from '../gameObjects/jugadores.js'
 class Scene_play extends Phaser.Scene {
     constructor() {
         super({ key: "Scene_play" });
+        this.hitCount = 0; // Inicializa el contador de golpes
     }
     create() {
         // Agregar la imagen de fondo que cubre todo el canvas
@@ -27,7 +28,7 @@ class Scene_play extends Phaser.Scene {
         this.ball.setAngularVelocity(150); // Rotación constante
 
         // Crear límites invisibles como cuerpos estáticos individuales
-        const arcoAltura = 170;
+        const arcoAltura = 173;
         const espacioArco = (this.sys.game.config.height - arcoAltura) / 2;
 
         // Zona superior izquierda
@@ -71,6 +72,13 @@ class Scene_play extends Phaser.Scene {
         // Rotar la bola manualmente
         this.ball.angle += 3; // Cambia el ángulo manualmente, más eficiente
 
+        // Resetea la posición si la bola sale del campo
+        if (this.ball.x < 0 || this.ball.x > this.sys.game.config.width) {
+            this.ball.setPosition(this.sys.game.config.width / 2, this.sys.game.config.height / 2);
+            this.hitCount = 0; // Reinicia el contador de golpes
+            this.ball.setVelocityX(-180); // Restablece la velocidad inicial
+        }
+
         if (this.ball.x < 0 || this.ball.x > this.sys.game.config.width) {
             this.ball.setPosition(this.sys.game.config.width / 2, this.sys.game.config.height / 2)
         }
@@ -96,6 +104,28 @@ class Scene_play extends Phaser.Scene {
     tocaJugador() {
         this.ball.setVelocityY(Phaser.Math.Between(-120, 120));
         this.ball.setAngularVelocity(Phaser.Math.Between(-200, 200)); // Cambia la velocidad angular en cada rebote
+
+         // Incrementa el contador de golpes
+         this.hitCount++;
+
+         // Aumenta la velocidad en cada golpe (usa una fórmula escalable)
+         const velocidadBase = 200; // Velocidad inicial de la bola
+         const incrementoVelocidad = 25; // Incremento por cada golpe
+         const velocidadMaxima = 1500; // Velocidad máxima permitida
+        const nuevaVelocidad = Math.min(velocidadBase + this.hitCount * incrementoVelocidad, velocidadMaxima);
+
+ 
+         // Ajusta la velocidad de la bola
+         const direccionX = this.ball.body.velocity.x > 0 ? 1 : -1; // Mantén la dirección X
+         this.ball.setVelocityX(direccionX * nuevaVelocidad);
+ 
+         // Ajusta la velocidad en Y con un rango aleatorio
+         this.ball.setVelocityY(Phaser.Math.Between(-120, 120));
+ 
+         // Cambia la velocidad angular
+         this.ball.setAngularVelocity(Phaser.Math.Between(-200, 200));
+ 
+         console.log(`Golpes: ${this.hitCount}, Velocidad: ${nuevaVelocidad}`);
     }
 
 }
