@@ -23,6 +23,8 @@ class Scene_play extends Phaser.Scene {
         this.ball.setCollideWorldBounds(true);
         this.ball.setBounce(1);
         this.ball.setVelocityX(-180);
+        this.ball.setAngularVelocity(150); // Velocidad de rotación (en grados por segundo)
+
 
         //Fisicas
         this.physics.add.collider(this.ball, this.izquierda, this.tocaJugador, null, this);
@@ -40,8 +42,8 @@ class Scene_play extends Phaser.Scene {
             this.ball.setPosition(this.sys.game.config.width/2,this.sys.game.config.height/2 )
         }
 
-        // Control de las palas
-        // pala derecha
+        // Control de llos jugadores
+        // jugador derecha
         if(this.cursor.down.isDown) {
             this.derecha.body.setVelocityY(300);
         } else if(this.cursor.up.isDown) {
@@ -49,7 +51,7 @@ class Scene_play extends Phaser.Scene {
         } else {
             this.derecha.body.setVelocityY(0);
         }
-        // Pala izquierda
+        // Jugador izquierda
         if(this.cursor_S.isDown) {
             this.izquierda.body.setVelocityY(300);
         } else if(this.cursor_W.isDown) {
@@ -58,9 +60,11 @@ class Scene_play extends Phaser.Scene {
             this.izquierda.body.setVelocityY(0);
         }
     }
-    tocaJugador () {
+    tocaJugador() {
         this.ball.setVelocityY(Phaser.Math.Between(-120, 120));
+        this.ball.setAngularVelocity(Phaser.Math.Between(-200, 200)); // Cambia la velocidad angular en cada rebote
     }
+    
 }
 
 export default Scene_play;
