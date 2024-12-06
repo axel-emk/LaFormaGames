@@ -105,27 +105,27 @@ class Scene_play extends Phaser.Scene {
         this.ball.setVelocityY(Phaser.Math.Between(-120, 120));
         this.ball.setAngularVelocity(Phaser.Math.Between(-200, 200)); // Cambia la velocidad angular en cada rebote
 
-         // Incrementa el contador de golpes
-         this.hitCount++;
+        // Incrementa el contador de golpes
+        this.hitCount++;
 
-         // Aumenta la velocidad en cada golpe (usa una fórmula escalable)
-         const velocidadBase = 200; // Velocidad inicial de la bola
-         const incrementoVelocidad = 25; // Incremento por cada golpe
-         const velocidadMaxima = 1500; // Velocidad máxima permitida
+        // Aumenta la velocidad en cada golpe (usa una fórmula escalable)
+        const velocidadBase = 200; // Velocidad inicial de la bola
+        const incrementoVelocidad = 25; // Incremento por cada golpe
+        const velocidadMaxima = 1500; // Velocidad máxima permitida
         const nuevaVelocidad = Math.min(velocidadBase + this.hitCount * incrementoVelocidad, velocidadMaxima);
 
- 
-         // Ajusta la velocidad de la bola
-         const direccionX = this.ball.body.velocity.x > 0 ? 1 : -1; // Mantén la dirección X
-         this.ball.setVelocityX(direccionX * nuevaVelocidad);
- 
-         // Ajusta la velocidad en Y con un rango aleatorio
-         this.ball.setVelocityY(Phaser.Math.Between(-120, 120));
- 
-         // Cambia la velocidad angular
-         this.ball.setAngularVelocity(Phaser.Math.Between(-200, 200));
- 
-         console.log(`Golpes: ${this.hitCount}, Velocidad: ${nuevaVelocidad}`);
+
+        // Ajusta la velocidad de la bola
+        const direccionX = this.ball.body.velocity.x > 0 ? 1 : -1; // Mantén la dirección X
+        this.ball.setVelocityX(direccionX * nuevaVelocidad);
+
+        // Ajusta la velocidad en Y con un rango aleatorio
+        this.ball.setVelocityY(Phaser.Math.Between(-120, 120));
+
+        // Cambia la velocidad angular
+        this.ball.setAngularVelocity(Phaser.Math.Between(-200, 200));
+
+        // console.log(`Golpes: ${this.hitCount}, Velocidad: ${nuevaVelocidad}`);
     }
 
 }

@@ -18,7 +18,7 @@ function preload() {
 }
 function create() {
     console.log("Create");
-    this.tomato = this.add.sprite(100, 100, 'tomato_atlas').setScale(2);
+    this.tomato = this.add.sprite(100, 150, 'tomato_atlas').setScale(5);
     this.dataAnim = this.cache.json.get('evil_tomato_anim'); 
 
     this.anims.fromJSON(this.dataAnim);
