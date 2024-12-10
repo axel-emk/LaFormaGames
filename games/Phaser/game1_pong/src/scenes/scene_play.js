@@ -109,9 +109,9 @@ class Scene_play extends Phaser.Scene {
         this.hitCount++;
 
         // Aumenta la velocidad en cada golpe (usa una fórmula escalable)
-        const velocidadBase = 250; // Velocidad inicial de la bola
-        const incrementoVelocidad = velocidadBase*0.3; // Incremento por cada golpe
-        const velocidadMaxima = 1500; // Velocidad máxima permitida
+        const velocidadBase = 200; // Velocidad inicial de la bola
+        const incrementoVelocidad = velocidadBase*0.2; // Incremento por cada golpe
+        const velocidadMaxima = 2000; // Velocidad máxima permitida
         const nuevaVelocidad = Math.min(velocidadBase + this.hitCount * incrementoVelocidad, velocidadMaxima);
 
 
