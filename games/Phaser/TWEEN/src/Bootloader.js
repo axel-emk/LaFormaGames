@@ -13,45 +13,44 @@ class Bootloader extends Phaser.Scene {
             console.log('Load complete');
         });
     }
-
     create() {
-        this.logo = this.add.image(40, this.scale.height / 2, 'logo_gamma');
-
-        let tween = this.tweens.add({
+        this.logo = this.add.image(60, 60, 'logo_gamma');
+    
+        // Tween 1: Mover a la derecha
+        this.tweens.add({
             targets: this.logo,
-            // duration: 1000,
-            // x:300,
-            props: {
-                x:{
-                    value: 300,
-                    duration: 2000
-                },
-                y: {
-                    value: 200,
-                    duration: 1000
-                }
-            },
-            repeat: 2,
-            yoyo: true,
-            ease: 'Power4',
-            // delay: 1000,
-            // hold: 1000,
-            // repeatDelay: 1000,
-            // completeDelay: 1000,
-            onStart: () => console.log('Inicia'),
-            onYoyo: () => console.log('Yoyo'),
-            onComplete: () => console.log('Final'),
-            onRepeat: () => console.log('Repeat')
+            x: 400,
+            duration: 1000,
+            ease: 'Power2',
+            onComplete: () => {
+                // Tween 2: Mover hacia abajo
+                this.tweens.add({
+                    targets: this.logo,
+                    y: 300,
+                    duration: 1000,
+                    ease: 'Power2',
+                    onComplete: () => {
+                        // Tween 3: Mover hacia la izquierda
+                        this.tweens.add({
+                            targets: this.logo,
+                            x: 60,
+                            duration: 1000,
+                            ease: 'Power2',
+                            onComplete: () => {
+                                // Tween 4: Mover hacia arriba
+                                this.tweens.add({
+                                    targets: this.logo,
+                                    y: 60,
+                                    duration: 1000,
+                                    ease: 'Power2'
+                                });
+                            }
+                        });
+                    }
+                });
+            }
         });
-
-        // setTimeout(() => {
-        //     tween.pause();
-        // }, 2500);
-
-        // setTimeout(() => {
-        //     tween.resume();
-        // }, 4000);
-
     }
+    
 }
 export default Bootloader;
