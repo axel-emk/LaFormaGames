@@ -1,56 +1,43 @@
 class Bootloader extends Phaser.Scene {
     constructor() {
-        super('Bootloader'); 
+        super({ key: "Bootloader" });
     }
 
     preload() {
-        console.log('Bootloader');
-        this.load.setPath('./assets/');
-
-        this.load.image('logo_gamma', 'logo_gamma.png');
-
-        this.load.on('complete', () => {
-            console.log('Load complete');
-        });
+        // Asegúrate de cargar la fuente personalizada antes de usarla
+        this.load.script(
+            'webfont',
+            'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+        );
     }
+  
+
     create() {
-        this.logo = this.add.image(60, 60, 'logo_gamma');
-    
-        // Tween 1: Mover a la derecha
-        this.tweens.add({
-            targets: this.logo,
-            x: 400,
-            duration: 1000,
-            ease: 'Power2',
-            onComplete: () => {
-                // Tween 2: Mover hacia abajo
-                this.tweens.add({
-                    targets: this.logo,
-                    y: 300,
-                    duration: 1000,
-                    ease: 'Power2',
-                    onComplete: () => {
-                        // Tween 3: Mover hacia la izquierda
-                        this.tweens.add({
-                            targets: this.logo,
-                            x: 60,
-                            duration: 1000,
-                            ease: 'Power2',
-                            onComplete: () => {
-                                // Tween 4: Mover hacia arriba
-                                this.tweens.add({
-                                    targets: this.logo,
-                                    y: 60,
-                                    duration: 1000,
-                                    ease: 'Power2'
-                                });
-                            }
-                        });
+        // Configura las fuentes de Google y personalizadas
+        WebFont.load({
+            custom: {
+                families: ['pruebas'], // Nombre definido en @font-face
+                urls: ['./assets/font/IndieFlower.ttf'], // Ruta a tu archivo de fuente
+            },
+            active: () => {
+                // Una vez cargada la fuente, crea el texto
+                const configText = {
+                    x: 100,
+                    y: 100, 
+                    text: 'Hola CTM!!!!!\ncomo estas?',
+                    style: {
+                        fontFamily: 'pruebas',
+                        backgroundColor: '#ff0000',
+                        fontSize: 40,
+                        align: 'center'
                     }
-                });
+                };
+                const texto = this.make.text(configText);
+                texto.setBackgroundColor('#ff00ff');
+                this.add.text(10, 10, 'Soy un puto texto!', { fontFamily: 'pruebas'});
             }
         });
     }
-    
 }
+
 export default Bootloader;
