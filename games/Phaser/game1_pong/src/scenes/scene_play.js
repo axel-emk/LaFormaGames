@@ -27,6 +27,19 @@ class Scene_play extends Phaser.Scene {
         this.ball.setVelocityX(-180);
         this.ball.setAngularVelocity(150); // Rotación constante
 
+         // Sensores de gol
+    this.sensorGolIzquierdo = this.add.rectangle(-10, center_height, 20, 173, 0x000000, 0);
+    this.physics.add.existing(this.sensorGolIzquierdo, true);
+
+    this.sensorGolDerecho = this.add.rectangle(this.sys.game.config.width + 10, center_height, 20, 173, 0x000000, 0);
+    this.physics.add.existing(this.sensorGolDerecho, true);
+
+    // Detectar goles
+    this.physics.add.overlap(this.ball, this.sensorGolIzquierdo, this.golDerecho, null, this);
+    this.physics.add.overlap(this.ball, this.sensorGolDerecho, this.golIzquierdo, null, this);
+
+  
+
         // Crear límites invisibles como cuerpos estáticos individuales
         const arcoAltura = 173;
         const espacioArco = (this.sys.game.config.height - arcoAltura) / 2;
@@ -110,8 +123,8 @@ class Scene_play extends Phaser.Scene {
 
         // Aumenta la velocidad en cada golpe (usa una fórmula escalable)
         const velocidadBase = 200; // Velocidad inicial de la bola
-        const incrementoVelocidad = 25; // Incremento por cada golpe
-        const velocidadMaxima = 1500; // Velocidad máxima permitida
+        const incrementoVelocidad = velocidadBase*0.2; // Incremento por cada golpe
+        const velocidadMaxima = 2000; // Velocidad máxima permitida
         const nuevaVelocidad = Math.min(velocidadBase + this.hitCount * incrementoVelocidad, velocidadMaxima);
 
 
@@ -127,6 +140,37 @@ class Scene_play extends Phaser.Scene {
 
         // console.log(`Golpes: ${this.hitCount}, Velocidad: ${nuevaVelocidad}`);
     }
+    golIzquierdo() {
+        console.log("¡Gol a la izquierda! La pelota debe ir hacia la derecha.");
+    
+        // Reinicia la posición de la pelota en el centro
+        this.resetBall(1); // Dirección hacia la derecha
+    }
+    
+    golDerecho() {
+        console.log("¡Gol a la derecha! La pelota debe ir hacia la izquierda.");
+    
+        // Reinicia la posición de la pelota en el centro
+        this.resetBall(-1); // Dirección hacia la izquierda
+    }
+    resetBall(direccion) {
+        // Pausar temporalmente la pelota
+        this.ball.setVelocity(0, 0);
+        this.ball.setAngularVelocity(0);
+    
+        // Reinicia la posición en el centro del campo
+        this.ball.setPosition(this.sys.game.config.width / 2, this.sys.game.config.height / 2);
+    
+        // Reinicia el contador de golpes
+        this.hitCount = 0;
+    
+        // Reinicia la velocidad inicial con dirección especificada
+        const velocidadInicial = 250; // Velocidad base inicial
+        this.ball.setVelocityX(direccion * velocidadInicial); // Dirección hacia el lado opuesto
+        this.ball.setVelocityY(Phaser.Math.Between(-100, 100)); // Dirección Y aleatoria
+    }
+    
+    
 
 }
 
