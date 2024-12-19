@@ -47,3 +47,35 @@ De ser necesario:
 
 git push origin main --force
 
+
+-------------------------------------------------------------------------------------------
+Bajar datos desde github
+
+1. Asegúrate de estar en la rama correcta
+Primero, verifica en qué rama estás actualmente y cámbiate a develop si no estás en ella.
+
+bash
+Copiar código
+
+git branch
+
+Esto mostrará la rama actual. Si no estás en develop, cámbiate a ella:
+
+git checkout develop
+
+2. Traer los últimos cambios
+Para actualizar tu repositorio local con los últimos cambios remotos, ejecuta:
+
+git pull origin develop
+
+Esto hace lo siguiente:
+
+Descarga (fetch) los últimos cambios desde GitHub.
+Fusiona (merge) los cambios en tu rama local develop.
+3. Verificar el estado del repositorio
+Una vez hecho el pull, verifica que todo esté actualizado y limpio:
+
+git status
+
+
+
