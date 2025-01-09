@@ -34,7 +34,7 @@ class Bootloader extends Phaser.Scene {
         // this.data.set('monedas', 300);
         // this.data.setValue('monedas', 400);
         // console.log(this.data.get('monedas'));
-        // console.log(this.data.getAll());
+        console.log(this.data.getAll());
     }
 }
 export default Bootloader;
